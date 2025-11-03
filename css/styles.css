@@ -1,0 +1,115 @@
+body.albums {
+  background-color: #0b094b;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center navbar links */
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-link {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #b8f3f7;
+  text-decoration: underline;
+}
+
+/* Tag / section title */
+.tag {
+  display: inline-block;
+  background: linear-gradient(to right, #5ec8ff, #a1d9ff);
+  color: #0b094b;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin: 40px auto;
+}
+
+/* Album sections */
+.albums-section {
+  margin-bottom: 50px;
+}
+
+.album-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.album-item {
+  text-align: center;
+}
+
+.album-item img {
+  width: 180px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.album-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Tracklist */
+.tracklist {
+  list-style: decimal;
+  text-align: left;
+  display: inline-block;
+  margin: 20px auto;
+  padding: 0;
+  color: white;
+  line-height: 1.8;
+}
+
+.center-cover {
+  width: 200px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Extra albums grid */
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 30px 20px;
+}
+
+.albums-grid img {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.albums-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  background-color: #0b094b;
+  color: #b8f3f7;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
