@@ -1,178 +1,151 @@
-/* -----------------------------------
+/* ------------------------------
    GLOBAL
------------------------------------ */
+------------------------------ */
 body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  color: white;
-  background: linear-gradient(180deg, #0b152a, #1e2a47);
+  color: black;
   text-align: center;
+  /* background: linear-gradient(180deg, #0b152a, #1e2a47); */
 }
 
-/* -----------------------------------
+/* ------------------------------
    NAVBAR
------------------------------------ */
+------------------------------ */
 .navbar-nav {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 25px;
-  flex-wrap: wrap;
 }
 
 .nav-link {
-  color: white;
+  color: black;
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  transition: color 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #80d0ff;
+  color: #9ecbff;
 }
 
-/* -----------------------------------
-   SECTION TITLES
------------------------------------ */
+/* ------------------------------
+   ALBUMS PAGE
+------------------------------ */
 .section-title h1 {
   font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #9cd6ff;
+
+  letter-spacing: 1px;
+  color: black;
 }
 
-/* -----------------------------------
-   ALBUM GRID
------------------------------------ */
+/* Album Grid - 2 per row */
 .album-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 35px;
-  margin: 50px auto;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  justify-items: center;
+  align-items: center;
+  padding: 40px 20px;
 }
 
 .album-item {
   text-align: center;
 }
 
-.album-item p {
-  margin-top: 10px;
-  font-weight: 500;
-  font-size: 1rem;
-  color: #f3f7fc;
+.album-item img {
+  width:  200px;            /* smaller images */
+  max-width: 250px;      /* limit size */
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ✅ Make images resize properly (Bootstrap ignored) */
-.album-img,
-.gallery-grid img,
-.morelife-box img {
-  display: block !important;
-  width: 100%;
-  max-width: 180px;
-  height: auto !important;
+.album-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+}
+
+.album-item p {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Collab section - also 2 per row */
+.album-grid:nth-of-type(2) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ------------------------------
+   MORE LIFE
+------------------------------ */
+.morelife-wrapper img {
+  width: 220px;
   border-radius: 12px;
-  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.morelife-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  display: inline-block;
+}
+
+/* ------------------------------
+   GALLERY
+------------------------------ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  justify-items: center;
+  padding: 40px 20px;
+}
+
+.gallery-grid img {
+  width: 80%;
+  max-width: 220px;
+  border-radius: 15px;
   transition: transform 0.3s ease;
 }
 
-.album-img:hover,
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
 
-/* -----------------------------------
-   MORE LIFE SECTION
------------------------------------ */
-.morelife-wrapper {
-  margin: 40px auto;
-}
-
-.morelife-box {
-  display: inline-block;
-  padding: 25px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-}
-
-.morelife-box img {
-  max-width: 150px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-/* -----------------------------------
-   GALLERY
------------------------------------ */
-.gallery-section {
-  margin: 60px auto;
-  max-width: 1000px;
-}
-
-.gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-/* -----------------------------------
+/* ------------------------------
    FOOTER
------------------------------------ */
-footer {
-  background: linear-gradient(90deg, #9dd6fb, #c1f0ff);
-  color: #0b152a;
-  font-weight: 500;
-  padding: 20px 0;
+------------------------------ */
+.footer {
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 60px;
 }
 
 .footer-links a {
-  color: #0b152a;
-  font-size: 1.3rem;
-  margin: 0 8px;
+  color: black;
+  font-size: 1.2rem;
+  margin: 0 10px;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #1e2a47;
+  color: #9ecbff;
 }
 
-/* -----------------------------------
-   RESPONSIVE BREAKPOINTS
------------------------------------ */
-@media (max-width: 992px) {
-  .album-img,
-  .gallery-grid img,
-  .morelife-box img {
-    max-width: 130px;
-  }
-}
-
+/* ------------------------------
+   RESPONSIVE FIXES
+------------------------------ */
 @media (max-width: 768px) {
-  .album-img,
-  .gallery-grid img,
-  .morelife-box img {
-    max-width: 110px;
+  .album-grid, .gallery-grid {
+    grid-template-columns: 1fr;
   }
 
-  .album-item p {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .album-img,
-  .gallery-grid img,
-  .morelife-box img {
-    max-width: 90px;
-  }
-
-  .album-item p {
-    font-size: 0.8rem;
+  .album-img, .gallery-grid img {
+    width: 70%;
   }
 }
